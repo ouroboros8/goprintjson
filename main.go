@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -21,8 +22,7 @@ func PrintBody(w http.ResponseWriter, r *http.Request) {
 		log.Print("Error marshalling JSON for printing. This probably shouldn't happen.")
 	}
 
-	log.Print("Decoded a JSON payload:")
-	fmt.Println(string(prettyPayload))
+	fmt.Println(base64.StdEncoding.EncodeToString(prettyPayload))
 }
 
 func main() {
