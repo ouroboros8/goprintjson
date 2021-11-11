@@ -27,5 +27,5 @@ func PrintBody(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", PrintBody)
-	http.ListenAndServe(":80", nil)
+	http.ListenAndServe(":8080", nil)
 }
